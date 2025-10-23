@@ -1,99 +1,108 @@
-/* Reset some default styles */
+/* General Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Body styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f2f4f7;
-  color: #333;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
 }
 
-/* Navbar */
-.navbar {
+/* Header */
+header {
+  background-color: #1a1a1a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a73e8;
-  padding: 15px 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .logo {
-  font-size: 1.5em;
-  color: #fff;
-  font-weight: bold;
+  font-size: 1.5rem;
   letter-spacing: 1px;
+  color: #ffcc66;
 }
 
-.menu {
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 1.5rem;
 }
 
-.menu li a {
+.nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: #f1f1f1;
   font-weight: 500;
-  transition: color 0.3s, transform 0.2s;
+  transition: color 0.3s ease;
 }
 
-.menu li a:hover {
-  color: #ffcc00;
-  transform: scale(1.05);
+.nav-links a:hover {
+  color: #ffcc66;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #1a73e8, #4285f4);
-  color: #fff;
+/* Sections */
+.menu-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+.menu-section h2 {
+  border-bottom: 2px solid #ffcc66;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #ffcc66;
 }
 
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 25px;
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #333;
 }
 
-.hero button {
-  background-color: #fff;
-  color: #1a73e8;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
+.menu-item span {
+  font-size: 1.1rem;
 }
 
-.hero button:hover {
-  background-color: #ffcc00;
-  color: #333;
+.price {
+  color: #ffcc66;
+  font-weight: 600;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 15px;
-  background-color: #1a73e8;
-  color: #fff;
-  margin-top: 50px;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  letter-spacing: 0.5px;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    gap: 15px;
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .menu-item span {
+    font-size: 1rem;
   }
 }
