@@ -1,4 +1,4 @@
-/* General Styling */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +7,58 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Transparent logo background */
 body {
-  background-color: #0f0f0f;
   color: #f1f1f1;
+  line-height: 1.6;
+  position: relative;
+  background-color: #0f0f0f; /* dark base */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("123.png") no-repeat center center fixed;
+   /* 🔧 You can edit these freely */
+  background-size: 80%;      /* Adjust this % or use 'contain'/'auto' */
+  background-position: center; /* Try values like 'top center', 'bottom right', etc. */
+  background-repeat: no-repeat;
+  opacity: 0.5;  /* 50% transparency */
+  z-index: -1;
 }
 
 /* Header */
 header {
-  background-color: #1a1a1a;
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-.logo {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
   font-size: 1.5rem;
   letter-spacing: 1px;
   color: #ffcc66;
@@ -48,11 +81,16 @@ header {
   color: #ffcc66;
 }
 
-/* Sections */
+/* Menu Sections */
 .menu-section {
   max-width: 800px;
   margin: 3rem auto;
-  padding: 0 1rem;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(26, 26, 26, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 .menu-section h2 {
@@ -64,6 +102,15 @@ header {
   color: #ffcc66;
 }
 
+.section-image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 10px rgba(255,204,102,0.3);
+}
+
+/* Menu Items */
 .menu-item {
   display: flex;
   justify-content: space-between;
@@ -84,19 +131,20 @@ header {
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #1a1a1a;
+  background: rgba(26, 26, 26, 0.8);
   color: #999;
   font-size: 0.9rem;
   margin-top: 3rem;
+  backdrop-filter: blur(6px);
 }
 
 footer p {
   letter-spacing: 0.5px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 600px) {
-  .logo {
+  .logo-text {
     font-size: 1.2rem;
   }
   .nav-links {
@@ -104,5 +152,8 @@ footer p {
   }
   .menu-item span {
     font-size: 1rem;
+  }
+  .section-image {
+    max-width: 90%;
   }
 }
